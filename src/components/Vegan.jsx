@@ -3,31 +3,31 @@ import styled from "styled-components";
 
 const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
 
-function Vegetarian() {
+function Vegan() {
 
-    const [vegetarian, setVegetarian] = useState([]);
+    const [vegan, setVegan] = useState([]);
 
     useEffect(() => {
-        getVegetarian();
+        getVegan();
     },[]);
 
-    const getVegetarian = async () => {
-        const check = localStorage.getItem('vegetarian');
+    const getVegan = async () => {
+        const check = localStorage.getItem('vegan');
         if(check) {
-            setVegetarian(JSON.parse(check)); //takes the string created from localstorage and changes it back to an array
+            setVegan(JSON.parse(check)); //takes the string created from localstorage and changes it back to an array
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${spoonAPI}&number=4&tags=vegetarian`);
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${spoonAPI}&number=4&tags=vegan`);
             const data = await api.json();
-            localStorage.setItem("vegetarian", JSON.stringify(data.recipes)); //takes the array and saves it as a string
-            setVegetarian(data.recipes);
+            localStorage.setItem("vegan", JSON.stringify(data.recipes)); //takes the array and saves it as a string
+            setVegan(data.recipes);
         }
     };
 
     return (
         <div>
             <Wrapper>
-                <h3>Vegetarian Picks</h3>
-                    {vegetarian.map((recipe) => {
+                <h3>Vegan Picks</h3>
+                    {vegan.map((recipe) => {
                          return (
                             <Card key={recipe.id}>
                                 <p>{recipe.title}</p>
@@ -50,4 +50,4 @@ const Card = styled.div`
     overflow: hidden;
 `;
 
-export default Vegetarian;
+export default Vegan;
