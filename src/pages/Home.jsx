@@ -1,11 +1,11 @@
-import Popular from "../components/Popular";
 import Vegetarian from "../components/Vegetarian";
+import Vegan from "../components/Vegan"
 
 function Home() {
     return (
         <div>
             <Vegetarian />
-            <Popular />
+            <Vegan />
         </div>
     )
 };
