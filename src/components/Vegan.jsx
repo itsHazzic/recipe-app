@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledPicksHeader } from "./Vegetarian";
-// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa";
 
 function Vegan() {
   const [vegan, setVegan] = useState([]);
@@ -36,8 +36,13 @@ function Vegan() {
         {vegan.map((recipe) => {
           return (
             <Card key={recipe.id}>
-              <Link to={"/recipe/" + recipe.id}>
-                <p>{recipe.title}</p>
+              <Link
+                to={"/recipe/" + recipe.id}
+                style={{ textDecoration: "none" }}
+              >
+                <StyledVeganP>
+                  <p>{recipe.title}</p>
+                </StyledVeganP>
                 <img src={recipe.image} alt={recipe.title} />
               </Link>
             </Card>
@@ -66,6 +71,13 @@ const Headerwrapper = styled.div`
 //Vegan Title Styling
 const StyledPicksHeaderVegan = styled.h3`
   font-family: "Dela Gothic One", cursive;
+`;
+
+const StyledVeganP = styled.p`
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
 `;
 
 export default Vegan;

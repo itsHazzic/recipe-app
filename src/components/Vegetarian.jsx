@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa";
 
 function Vegetarian() {
   const [vegetarian, setVegetarian] = useState([]);
@@ -36,8 +36,13 @@ function Vegetarian() {
         {vegetarian.map((recipe) => {
           return (
             <Card key={recipe.id}>
-              <Link to={"/recipe/" + recipe.id}>
-                <p>{recipe.title}</p>
+              <Link
+                to={"/recipe/" + recipe.id}
+                style={{ textDecoration: "none" }}
+              >
+                <StyledVeggieP>
+                  <p>{recipe.title}</p>
+                </StyledVeggieP>
                 <img src={recipe.image} alt={recipe.title} />
               </Link>
             </Card>
@@ -49,7 +54,7 @@ function Vegetarian() {
 }
 
 const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  display: flex;
 `;
 
 const Headerwrapper = styled.div`
@@ -58,19 +63,29 @@ const Headerwrapper = styled.div`
 `;
 
 const Card = styled.div`
+  display: flex;
   min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
 
   img {
     border-radius: 2rem;
-    border: 1px black;
+    border: 3px black solid;
+    box-shadow: 15px 15px black;
+    margin: 2rem;
   }
 `;
 
 //Veggie Title Styling
 const StyledPicksHeaderVeggie = styled.h3`
   font-family: "Dela Gothic One", cursive;
+`;
+
+const StyledVeggieP = styled.p`
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
 `;
 
 export default Vegetarian;
