@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { StyledPicksHeader } from "./Vegetarian";
-const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
 
 function Vegan() {
   const [vegan, setVegan] = useState([]);
@@ -28,9 +28,11 @@ function Vegan() {
   return (
     <div>
       <Wrapper>
-        <StyledPicksHeaderVegan>
-          <h3>Vegan Picks</h3>
-        </StyledPicksHeaderVegan>
+        <Headerwrapper>
+          <StyledPicksHeaderVegan>
+            <h3>Vegan Picks</h3>
+          </StyledPicksHeaderVegan>
+        </Headerwrapper>
         {vegan.map((recipe) => {
           return (
             <Card key={recipe.id}>
@@ -54,6 +56,11 @@ const Card = styled.div`
   min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
+`;
+
+const Headerwrapper = styled.div`
+  display: flex;
+  margin: 5rem;
 `;
 
 //Vegan Title Styling
