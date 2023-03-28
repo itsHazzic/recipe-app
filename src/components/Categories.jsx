@@ -52,9 +52,17 @@ const NLink = styled(NavLink)`
 `;
 
 const StyledHeader1 = styled.h1`
+  display: flex;
+  justify-items: center;
   background-color: #68dede;
   font-family: "Dela Gothic One", cursive;
   font-size: 1.5rem;
+  height: 7rem;
+  align-text: center;
+  border: 4px black solid;
+  border-radius: 15px;
+  padding: 0.5rem;
+  box-shadow: 10px 10px;
 `;
 
 export default Categories;

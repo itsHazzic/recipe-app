@@ -8,9 +8,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Nav>
-        <Logo to={"/"}><h2>Recipe App</h2></Logo>
-      </Nav>
+        <Nav>
+          <Logo to={"/"}>
+            <h2>FRIENDLY FOODS</h2>
+          </Logo>
+        </Nav>
         <SearchBar />
         <Categories />
         <Pages />
@@ -22,6 +24,11 @@ function App() {
 const Logo = styled(Link)`
   font-color: orange;
   font size: 1.5rem;
+  text-decoration: none;
+  color: black;
+ font-family: "Dela Gothic One", cursive;
+ font-size: 2rem;
+ margin: 4rem;
 `;
 
 const Nav = styled.div`

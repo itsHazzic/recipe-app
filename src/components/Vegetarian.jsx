@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
 
 function Vegetarian() {
   const [vegetarian, setVegetarian] = useState([]);
@@ -28,9 +28,11 @@ function Vegetarian() {
   return (
     <div>
       <Wrapper>
-        <StyledPicksHeaderVeggie>
-          <h3>Vegetarian Picks</h3>
-        </StyledPicksHeaderVeggie>
+        <Headerwrapper>
+          <StyledPicksHeaderVeggie>
+            <h3>Vegetarian Picks</h3>
+          </StyledPicksHeaderVeggie>
+        </Headerwrapper>
         {vegetarian.map((recipe) => {
           return (
             <Card key={recipe.id}>
@@ -50,12 +52,23 @@ const Wrapper = styled.div`
   margin: 4rem 0rem;
 `;
 
+const Headerwrapper = styled.div`
+  display: flex;
+  margin: 5rem;
+`;
+
 const Card = styled.div`
   min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
+
+  img {
+    border-radius: 2rem;
+    border: 1px black;
+  }
 `;
 
+//Veggie Title Styling
 const StyledPicksHeaderVeggie = styled.h3`
   font-family: "Dela Gothic One", cursive;
 `;
