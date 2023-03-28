@@ -17,7 +17,6 @@ function Diet() {
 
     useEffect(() => {
         getDiet(params.name);
-        console.log(params.name);
     }, [params.name]);
 
     return (
@@ -25,8 +24,10 @@ function Diet() {
            {diet.map((item) => {
             return (
                 <Card key={item.id}>
-                    <img src={item.image} alt={item.title} />
-                    <h4>{item.title}</h4>
+                    <Link to={"/recipe/" + item.id}>
+                        <img src={item.image} alt={item.title} />
+                        <h4>{item.title}</h4>
+                    </Link>
                 </Card>
             );
            })} 

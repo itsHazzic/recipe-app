@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
 
@@ -31,10 +30,8 @@ function Vegan() {
                     {vegan.map((recipe) => {
                          return (
                             <Card key={recipe.id}>
-                                <Link to={"/recipe/" + recipe.id}>
-                                    <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
-                                </Link>
+                                <p>{recipe.title}</p>
+                                <img src={recipe.image} alt={recipe.title} />
                             </Card>
                         );
                     })}

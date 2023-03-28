@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
     const [input, setInput] = useState("");
+    const navigate = useNavigate();
     const submitHandler = (e) => {
         e.preventDefault();
+        navigate('/search/' + input);
     };
     return (
         <FormStyle onSubmit={submitHandler}>
