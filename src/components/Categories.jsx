@@ -46,7 +46,7 @@ const NLink = styled(NavLink)`
 
   &.active {
     h4 {
-      color: green;
+      color: grey;
     }
   }
 `;
