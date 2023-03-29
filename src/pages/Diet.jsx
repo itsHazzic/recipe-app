@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 // const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca"; //original sarah api key
 
-// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
+const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
 
 function Diet() {
   const [diet, setDiet] = useState([]);

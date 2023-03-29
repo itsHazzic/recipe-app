@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca"; //original sarah api key
 
-// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
+const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
 
 function SearchedPage() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -27,7 +27,7 @@ function SearchedPage() {
       {searchedRecipes.map((item) => {
         return (
           <Card key={item.id}>
-            <Link to={"/recipe/" + item.id}>
+            <Link to={"/recipe/" + item.id} style={{ textDecoration: "none" }}>
               <img src={item.image} alt={item.title} />
               <h4>{item.title}</h4>
             </Link>
