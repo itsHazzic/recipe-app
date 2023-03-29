@@ -28,11 +28,9 @@ function Vegetarian() {
   return (
     <div>
       <Wrapper>
-        <Headerwrapper>
-          <StyledPicksHeaderVeggie>
-            <h3>Vegetarian Picks</h3>
-          </StyledPicksHeaderVeggie>
-        </Headerwrapper>
+        <StyledPicksHeaderVeggie>
+          <h3>Vegetarian Picks</h3>
+        </StyledPicksHeaderVeggie>
         {vegetarian.map((recipe) => {
           return (
             <Card key={recipe.id}>
@@ -54,27 +52,26 @@ function Vegetarian() {
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  margin: 2rem;
-`;
-
-const Headerwrapper = styled.div`
-  display: flex;
-  margin: 5rem;
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 3rem;
 `;
 
 const Card = styled.div`
-  display: flex;
-  min-height: 25rem;
-  border-radius: 2rem;
-  overflow: hidden;
+  h4 {
+    text-decoration: none;
+    color: black;
+    font-family: "Abel", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
 
   img {
     border-radius: 2rem;
     border: 3px black solid;
     box-shadow: 15px 15px black;
-    margin: 2rem;
-    max-height: 10rem;
   }
 `;
 

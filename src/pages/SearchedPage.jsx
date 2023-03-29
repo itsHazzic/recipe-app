@@ -37,22 +37,27 @@ function SearchedPage() {
 }
 
 const Grid = styled.div`
+  margin: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
 `;
 
 const Card = styled.div`
-  border-radius: 2rem;
-
   h4 {
     text-decoration: none;
-    border-bottom: none;
+    color: black;
+    font-family: "Abel", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
   }
-`;
 
-const StyledImg = styled.img`
-  border-radius: 2rem;
+  img {
+    border-radius: 2rem;
+    border: 3px black solid;
+    box-shadow: 15px 15px black;
+  }
 `;
 
 export default SearchedPage;

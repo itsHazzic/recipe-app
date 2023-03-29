@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
-// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
 
 function Recipe() {
   const [recipe, setRecipeDetails] = useState({});
@@ -72,16 +72,44 @@ const RecipeWrapper = styled.div`
   .active {
     background-color: green;
   }
+
+  h2 {
+    text-decoration: none;
+    color: black;
+    font-family: "Abel", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  li {
+    font-family: "Abel", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
 `;
 
 const Button = styled.button`
   padding: 1rem 2rem;
-  color: grey;
   background: orange;
+  text-decoration: none;
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  border-radius: 2rem;
+  border: 3px black solid;
+  box-shadow: 10px 10px black;
 `;
 
 const Information = styled.div`
   margin-left: 10rem;
+  text-decoration: none;
+  color: black;
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
 
 export default Recipe;
