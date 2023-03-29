@@ -55,6 +55,7 @@ function Vegetarian() {
 
 const Wrapper = styled.div`
   display: flex;
+  margin: 2rem;
 `;
 
 const Headerwrapper = styled.div`
@@ -64,7 +65,7 @@ const Headerwrapper = styled.div`
 
 const Card = styled.div`
   display: flex;
-  min-height: 10rem;
+  min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
 
@@ -73,6 +74,7 @@ const Card = styled.div`
     border: 3px black solid;
     box-shadow: 15px 15px black;
     margin: 2rem;
+    max-height: 10rem;
   }
 `;
 

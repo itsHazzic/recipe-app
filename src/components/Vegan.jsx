@@ -55,6 +55,7 @@ function Vegan() {
 
 const Wrapper = styled.div`
   display: flex;
+  margin: 2rem;
 `;
 
 const Card = styled.div`
@@ -68,6 +69,7 @@ const Card = styled.div`
     border: 3px black solid;
     box-shadow: 15px 15px black;
     margin: 2rem;
+    max-height: 10rem;
   }
 `;
 
