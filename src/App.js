@@ -1,6 +1,6 @@
 import Pages from "./pages/Pages";
 import Categories from "./components/Categories";
-import { Link, BrowserRouter } from "react-router-dom";
+import { NavLink, Link, BrowserRouter } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,6 +27,9 @@ function App() {
           </Logo>
         </Nav>
         <SearchBar />
+        <NLink to={"/favourites"}>
+          <h4>Favourites</h4>
+        </NLink>
         <Categories />
         <Pages />
       </BrowserRouter>
@@ -55,6 +58,23 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+`;
+
+const NLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  text-decoration: none;
+  border-bottom-style: none;
+  color: black;
+
+  &.active {
+    h4 {
+      color: grey;
+    }
+  }
 `;
 
 export default App;

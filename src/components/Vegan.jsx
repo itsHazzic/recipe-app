@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import { StyledPicksHeader } from "./Vegetarian";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
-// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //original sarah api key
-
-// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
+import { spoonAPI } from "../ApiKey";
 
 function Vegan() {
   const [vegan, setVegan] = useState([]);

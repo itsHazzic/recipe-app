@@ -8,14 +8,13 @@ import {
   faRectangleList,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-
-// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca"; //original sarah api key
-
-const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
+import { spoonAPI } from "../ApiKey";
 
 function Recipe() {
   const [recipe, setRecipeDetails] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
+  const [activeFave, setActiveFave] = useState("unsaved");
+  const [favourites, setFavourites] = useState([]);
   let params = useParams();
 
   const fetchRecipeDetails = async () => {
@@ -31,6 +30,27 @@ function Recipe() {
     fetchRecipeDetails();
   }, [params.id]);
 
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('friendly-foods-recipe-favourites', JSON.stringify(items))
+  };
+
+  const addFavouriteRecipe = (recipe) => {
+    const newFavouriteList = [...favourites, recipe];
+    setFavourites(newFavouriteList);
+    setActiveFave("saved");
+    saveToLocalStorage(newFavouriteList);
+  };
+
+  const removeFavouriteRecipe = (recipe) => {
+    const newFavouriteList = favourites.filter(
+      (favourite) => favourite.id !== recipe.id
+    );
+    setFavourites(newFavouriteList);
+    setActiveFave("unsaved");
+    saveToLocalStorage(newFavouriteList);
+  };
+
+
   return (
     <RecipeWrapper>
       <div>
@@ -41,6 +61,8 @@ function Recipe() {
             <li key={dietname.id}>{dietname}</li>
           ))}
         </ul>
+        <Button className={activeFave === 'saved' ? 'activefave' : ''} onClick={() => addFavouriteRecipe(recipe)}>Save Recipe</Button>
+        <Button className={activeFave === 'unsaved' ? 'activefave' : ''} onClick={() => removeFavouriteRecipe(recipe)}>Remove Saved Recipe</Button>
       </div>
       <Information>
         <Button
@@ -87,6 +109,11 @@ const RecipeWrapper = styled.div`
     background-color: #33ff99;
   }
 
+  .activefave {
+    background-color: grey;
+    display: none;
+  }
+
   h2 {
     text-decoration: none;
     color: black;
@@ -131,6 +158,11 @@ const Button = styled.button`
   border-radius: 1rem;
   border: 3px black solid;
   box-shadow: 10px 10px black;
+
+  .activefave {
+    background-color: grey;
+    display: none;
+  }
 `;
 
 const Information = styled.div`

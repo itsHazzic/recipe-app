@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
-
-// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca"; //original sarah api key
-
-const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
+import { spoonAPI } from "../ApiKey";
 
 function SearchedPage() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
