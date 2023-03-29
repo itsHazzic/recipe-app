@@ -54,13 +54,21 @@ function Vegan() {
 }
 
 const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  display: flex;
 `;
 
 const Card = styled.div`
+  display: flex;
   min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
+
+  img {
+    border-radius: 2rem;
+    border: 3px black solid;
+    box-shadow: 15px 15px black;
+    margin: 2rem;
+  }
 `;
 
 const Headerwrapper = styled.div`

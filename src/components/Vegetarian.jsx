@@ -64,7 +64,7 @@ const Headerwrapper = styled.div`
 
 const Card = styled.div`
   display: flex;
-  min-height: 25rem;
+  min-height: 10rem;
   border-radius: 2rem;
   overflow: hidden;
 
