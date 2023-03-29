@@ -28,30 +28,37 @@ function Vegetarian() {
   return (
     <div>
       <Wrapper>
-        <StyledPicksHeaderVeggie>
-          <h3>Vegetarian Picks</h3>
-        </StyledPicksHeaderVeggie>
-        {vegetarian.map((recipe) => {
-          return (
-            <Card key={recipe.id}>
-              <Link
-                to={"/recipe/" + recipe.id}
-                style={{ textDecoration: "none" }}
-              >
-                <StyledVeggieP>
-                  <p>{recipe.title}</p>
-                </StyledVeggieP>
-                <img src={recipe.image} alt={recipe.title} />
-              </Link>
-            </Card>
-          );
-        })}
+        <h3>Vegetarian Picks</h3>
+        <StyledGrid>
+          {vegetarian.map((recipe) => {
+            return (
+              <Card key={recipe.id}>
+                <Link
+                  to={"/recipe/" + recipe.id}
+                  style={{ textDecoration: "none" }}
+                >
+                  <img src={recipe.image} alt={recipe.title} />
+
+                  <StyledVeggieP>
+                    <p>{recipe.title}</p>
+                  </StyledVeggieP>
+                </Link>
+              </Card>
+            );
+          })}
+        </StyledGrid>
       </Wrapper>
     </div>
   );
 }
 
 const Wrapper = styled.div`
+  h3 {
+    font-family: "Dela Gothic One", cursive;
+  }
+`;
+
+const StyledGrid = styled.div`
   margin: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -72,12 +79,10 @@ const Card = styled.div`
     border-radius: 2rem;
     border: 3px black solid;
     box-shadow: 15px 15px black;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
   }
-`;
-
-//Veggie Title Styling
-const StyledPicksHeaderVeggie = styled.h3`
-  font-family: "Dela Gothic One", cursive;
 `;
 
 const StyledVeggieP = styled.p`

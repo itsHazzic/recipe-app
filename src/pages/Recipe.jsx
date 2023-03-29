@@ -48,7 +48,9 @@ function Recipe() {
         </Button>
         {activeTab === "instructions" && (
           <div>
-            <p dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
+            <StyledRecipeP style={{ textDecoration: "none" }}>
+              <p dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
+            </StyledRecipeP>
             <h4 dangerouslySetInnerHTML={{ __html: recipe.instructions }}></h4>
           </div>
         )}
@@ -65,18 +67,19 @@ function Recipe() {
 }
 
 const RecipeWrapper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  display: flex;
+   {
+    margin: 10rem;
+    display: flex;
+  }
 
   .active {
-    background-color: green;
+    background-color: #33ff99;
   }
 
   h2 {
     text-decoration: none;
     color: black;
-    font-family: "Abel", sans-serif;
+    font-family: "Dela Gothic One", cursive;
     font-size: 1.5rem;
     font-weight: bold;
     color: black;
@@ -88,17 +91,33 @@ const RecipeWrapper = styled.div`
     font-weight: bold;
     color: black;
   }
+
+  img {
+    border-radius: 2rem;
+    border: 3px black solid;
+    box-shadow: 15px 15px black;
+    margin: 2rem;
+  }
+
+  p {
+    text-decoration: none;
+  }
+
+  ul {
+    margin: 1rem;
+  }
 `;
 
 const Button = styled.button`
+  margin: 1rem;
   padding: 1rem 2rem;
-  background: orange;
+  background-color: #cc66ff;
   text-decoration: none;
-  font-family: "Abel", sans-serif;
+  font-family: "Dela Gothic One", cursive;
   font-size: 1.5rem;
   font-weight: bold;
   color: black;
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: 3px black solid;
   box-shadow: 10px 10px black;
 `;
@@ -110,6 +129,15 @@ const Information = styled.div`
   font-family: "Abel", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+const StyledRecipeP = styled.p`
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+    color: #ed5ed5;
+  }
 `;
 
 export default Recipe;
