@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa";
+// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //original sarah api key
+
+// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
 
 function Vegetarian() {
   const [vegetarian, setVegetarian] = useState([]);
@@ -28,7 +32,9 @@ function Vegetarian() {
   return (
     <div>
       <Wrapper>
-        <h3>Vegetarian Picks</h3>
+        <h3>
+          Vegetarian Picks <FontAwesomeIcon icon={faStar} />
+        </h3>
         <StyledGrid>
           {vegetarian.map((recipe) => {
             return (
@@ -53,8 +59,10 @@ function Vegetarian() {
 }
 
 const Wrapper = styled.div`
+  margin: 5rem;
   h3 {
     font-family: "Dela Gothic One", cursive;
+    font-size: 2rem;
   }
 `;
 

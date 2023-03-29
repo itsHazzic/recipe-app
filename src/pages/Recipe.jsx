@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faBowlFood,
+  faRectangleList,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
 
-const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca";
+// const spoonAPI = "9bc0a14567ad453a8bdbb7da98d758ca"; //original sarah api key
+
+// const spoonAPI = "e03747fcb6294f39a5076b453fe3cbaa"; //charliy api key
 
 function Recipe() {
   const [recipe, setRecipeDetails] = useState({});
@@ -38,13 +47,15 @@ function Recipe() {
           className={activeTab === "instructions" ? "active" : ""}
           onClick={() => setActiveTab("instructions")}
         >
-          Instructions
+          Instructions{"  "}
+          <FontAwesomeIcon icon={faRectangleList} />
         </Button>
         <Button
           className={activeTab === "ingredients" ? "active" : ""}
           onClick={() => setActiveTab("ingredients")}
         >
-          Ingredients
+          Ingredients{"  "}
+          <FontAwesomeIcon icon={faUtensils} />
         </Button>
         {activeTab === "instructions" && (
           <div>
