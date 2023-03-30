@@ -18,10 +18,18 @@ No installation required, however in order to run the app directly from the repo
 
 In order to access the deployed application you will need to visit the following link:
 
+https://recipe-app-indol-seven.vercel.app/
+
 ### GitHub Repository
 
 To visit the github repository, go to the following link:
 https://github.com/itsHazzic/recipe-app
+
+### Presentation Link
+
+Here is the link to the presentation about the project:
+
+https://docs.google.com/presentation/d/1p5Gfci9Zz24ADjXKfT_4cq8ahjRu1qHz0V9VncAZ6TY/edit#slide=id.p
 
 ### How to use the application
 
