@@ -44,6 +44,10 @@ If you click the "ingredients" button, the app will display the ingredients that
 
 ![Instructions Second Screenshot](public/assets/Instructions_Screenshot_5.png)
 
+When you are viewing a recipe, if you click "save recipe" this will save the recipe to your favourites, which can then be viewed by clicking on "favourites" where you will be able to see the recipe that you saved as a favourite.
+
+![Favourites Screenshot](public/assets/Favourites_Screenshot_6.png)
+
 ## Credits
 
 ### Collaborators

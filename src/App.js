@@ -9,6 +9,7 @@ import {
   faBowlFood,
   faRectangleList,
   faWandMagicSparkles,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -28,7 +29,10 @@ function App() {
         </Nav>
         <SearchBar />
         <NLink to={"/favourites"}>
-          <h4>Favourites</h4>
+          <h4>
+            Favourites
+            <FontAwesomeIcon icon={faStar} />
+          </h4>
         </NLink>
         <Categories />
         <Pages />
@@ -51,6 +55,8 @@ const Logo = styled(Link)`
  font-size: 2rem;
  color: grey;
   }
+
+
 `;
 
 const Nav = styled.div`
@@ -69,6 +75,19 @@ const NLink = styled(NavLink)`
   text-decoration: none;
   border-bottom-style: none;
   color: black;
+
+  h4 {
+    text-decoration: none;
+    color: black;
+    font-family: "Dela Gothic One", cursive;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #33ff99;
+    border-radius: 2rem;
+    border: 3px black solid;
+    box-shadow: 15px 15px black;
+    width: 20rem;
+  }
 
   &.active {
     h4 {
