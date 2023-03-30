@@ -1,39 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function Favourites() {
+  const [favourites, setFavourites] = useState([]);
 
-    const [favourites, setFavourites] = useState([]);
-
-    useEffect(() => {
-        const recipeFavourites = JSON.parse(
-            localStorage.getItem('friendly-foods-recipe-favourites')
-        );
-
-        if (recipeFavourites) {
-            setFavourites(recipeFavourites);
-        }
-    }, []);
-
-    const recipes = favourites;
-
-    return (
-        <div>
-            <Grid>
-                {recipes.map((item) => {
-                    return (
-                        <Card key={item.id}>
-                            <Link to={"/recipe/" + item.id} style={{ textDecoration: "none" }}>
-                                <img src={item.image} alt={item.title} />
-                                <h4>{item.title}</h4>
-                            </Link>
-                        </Card>
-                    );
-                })}
-            </Grid>
-        </div>
+  useEffect(() => {
+    const recipeFavourites = JSON.parse(
+      localStorage.getItem("friendly-foods-recipe-favourites")
     );
+
+    if (recipeFavourites) {
+      setFavourites(recipeFavourites);
+    }
+  }, []);
+
+  const recipes = favourites;
+
+  return (
+    <div>
+      <Grid>
+        {recipes.map((item) => {
+          return (
+            <Card key={item.id}>
+              <Link
+                to={"/recipe/" + item.id}
+                style={{ textDecoration: "none" }}
+              >
+                <img src={item.image} alt={item.title} />
+                <h4>{item.title}</h4>
+              </Link>
+            </Card>
+          );
+        })}
+      </Grid>
+    </div>
+  );
 }
 
 const Grid = styled.div`
